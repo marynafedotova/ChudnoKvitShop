@@ -42,12 +42,13 @@
     <nav>
       <ul class="mobile-menu">
         <li><a href="/ChudnoKvitShop/index.html">ГОЛОВНА</a></li>
-              <li><a href="catalog.html">КАТАЛОГ</a></li>
-              <li><a href="contacts.html">КОНТАКТИ</a></li>
-              <li><a href="shipping.html">ДОСТАВКА І ОПЛАТА</a></li>
-              <li><a href="reviews.html">ВІДГУКИ</a></li>
-              <li><a href="promotions.html">АКЦІЇ</a></li>
-              <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="../images/cart.svg" alt="cart"></button></li>
+        <li><a href="catalog.html">КАТАЛОГ</a></li>
+        <li><a href="contacts.html">КОНТАКТИ</a></li>
+        <li><a href="shipping.html">ДОСТАВКА І ОПЛАТА</a></li>
+        <li><a href="reviews.html">ВІДГУКИ</a></li>
+        <li><a href="promotions.html">АКЦІЇ</a></li>
+        <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="../images/cart.svg"
+              alt="cart"></button></li>
       </ul>
     </nav>
   </div>
@@ -73,7 +74,8 @@
               <li><a href="shipping.html">ДОСТАВКА І ОПЛАТА</a></li>
               <li><a href="reviews.html">ВІДГУКИ</a></li>
               <li><a href="promotions.html">АКЦІЇ</a></li>
-              <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="../images/cart.svg" alt="cart"></button></li>
+              <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="../images/cart.svg"
+                    alt="cart"></button></li>
             </ul>
           </nav>
           <div class="hamburger-wrap">
@@ -93,28 +95,26 @@
       <section id="contact-form">
         <div class="container">
           <h1>Зв'язатися з нами</h1>
-
-          <form id="feedback_form" action="#" method="post">
+          <form id="feedback_form">
             <div class="form-container">
-              <div class="left-form">
-                <div class="name">
-                  <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="Ім'я">
-                </div>
-                <div class="telephone">
-                  <input type="tel" class="form-control" id="phone" required placeholder="Ваш номер телефону">
-                </div>
-                <div class="email">
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email">
-                </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" required placeholder="Ваше ім'я">
               </div>
-              <div class="right-form">
-                <div class="message">
-                  <textarea id="message" name="message" rows="9" cols="35" placeholder="Повідомлення"></textarea>
-                </div>
-              </div>  
+              <div class="form-group">
+                <input type="tel" class="form-control" id="phone" required placeholder="Ваш номер телефону">
+              </div>
             </div>
-            <button type="submit" class="btn-form">Відправити</button>
+            <div class="form-container">
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" required placeholder="Ваша електронна пошта">
+              </div>
+              <div class="form-group">
+                <textarea id="comment" class="form-control" cols="21" rows="4" placeholder="Ваш коментар"></textarea>
+              </div>
+          </div>
+            <button type="submit" class="btn-form">Відправити повідомлення</button>
           </form>
+
         </div>
       </section>
 
@@ -170,79 +170,78 @@
           </ul>
         </div>
       </div>
-      <div class="copyright">© 2023 Всі права захищені.</div>
+      <div class="copyright">© 2024 Всі права захищені.</div>
       <div class="container">
         <div id="modalWrapper" class="modal-wrapper">
           <div id="continueShoppingModal" class="modal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title">Кошик</h5>
-                          <button type="button" class="close" aria-label="Close" onclick="hideCartModal()">
-                              <span aria-hidden="true">×</span>
-                          </button>
-                      </div>
-                      <div class="modal-body">
-                          <table class="table">
-                              <thead>
-                                      <th scope="col">Артикул</th>
-                                      <th scope="col">Назва</th>
-                                      <th scope="col">Ціна</th>
-                                      <th scope="col">Кількість</th>
-                                      <th scope="col">Видалити</th>
-                                  </tr>
-                              </thead>
-                              <tbody class="show-cart">
-                              </tbody>
-                          </table>
-                          <p>Загальна вартість: <span class="total-cart">0</span> грн</p>
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" id="continueShoppingBtn" onclick="hideCartModal()">Продолжить покупки</button>
-                          <button type="button" class="btn btn-primary" id="checkoutBtn">Оформить заказ</button>
-                      </div>
-                  </div>
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Кошик</h5>
+                  <button type="button" class="close" aria-label="Close" onclick="hideCartModal()">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table class="table">
+                    <thead>
+                      <th scope="col">Артикул</th>
+                      <th scope="col">Назва</th>
+                      <th scope="col">Ціна</th>
+                      <th scope="col">Кількість</th>
+                      <th scope="col">Видалити</th>
+                      </tr>
+                    </thead>
+                    <tbody class="show-cart">
+                    </tbody>
+                  </table>
+                  <p>Загальна вартість: <span class="total-cart">0</span> грн</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="continueShoppingBtn"
+                    onclick="hideCartModal()">Продолжить покупки</button>
+                  <button type="button" class="btn btn-primary" id="checkoutBtn">Оформить заказ</button>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-       </div>
-       <div class="container">
+      <div class="container">
         <div id="orderModal" class="modal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title">Оформлення замовлення</h5>
-                      <button type="button" class="close" aria-label="Close" onclick="hideOrderModal()">
-                          <span aria-hidden="true">×</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      <div class="order-items">
-                          <h6>Ваше замовлення:</h6>
-                          <ol class="order-items-list">
-                              <!--Товари з кошика -->
-                          </ol>
-                      </div>
-                      <form id="checkoutForm">
-                          <div class="form-group">
-                              <input type="text" class="form-control" id="name" required placeholder="Вaше ім'я">
-                          </div>
-                          <div class="form-group">
-                              <input type="tel" class="form-control" id="phone" required placeholder="Ваш номер телефону">
-                          </div>
-                          <div class="form-group">
-                            <textarea id="story" name="story" rows="5" cols="33" placeholder="Ваш коментар">
-                              
-                              </textarea>
-                        </div>
-                          <button type="submit" class="btn btn-primary">Отправить заказ</button>
-                      </form>
-                  </div>
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Оформлення замовлення</h5>
+                <button type="button" class="close" aria-label="Close" onclick="hideOrderModal()">
+                  <span aria-hidden="true">×</span>
+                </button>
               </div>
+              <div class="modal-body">
+                <div class="order-items">
+                  <h6>Ваше замовлення:</h6>
+                  <ol class="order-items-list">
+                    <!--Товари з кошика -->
+                  </ol>
+                </div>
+                <form id="checkoutForm">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" required placeholder="Ваше ім'я">
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" class="form-control" id="phone" required placeholder="Ваш номер телефону">
+                  </div>
+                  <div class="form-group">
+                    <textarea id="comment" name="comment" rows="5" cols="33" placeholder="Ваш коментар"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Відправити замовлення</button>
+                </form>
+              </div>
+            </div>
           </div>
+        </div>
+
       </div>
-    
-       </div>
 
     </footer>
 
@@ -254,6 +253,7 @@
       <script src="assets/js/lazyload.min.js"></script> -->
     <script src="../js/toast.js"></script>
     <script src="../js/shoppingCart.js"></script>
+    <script src="../js/form.js"></script>
 
     <!-- <script src="../js/main.js"></script> -->
   </div>
