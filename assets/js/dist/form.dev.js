@@ -1,57 +1,74 @@
 "use strict";
 
-var checkoutForm = document.getElementById('feedback_form');
+// form
+document.addEventListener('DOMContentLoaded', function () {
+  var formControl = document.querySelectorAll('.form-control');
+  var feedbackForm = document.getElementById('feedback_form');
+  var nameFld = document.getElementById('exampleInputName');
+  var emailFld = document.getElementById('exampleInputEmail1');
+  formControl.forEach(function (input) {
+    input.addEventListener('focus', function () {
+      if (this.classList.contains('is-invalid')) {
+        this.classList.remove('is-invalid');
+      }
+    });
+  });
+  feedbackForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var errors = [];
+    var name = nameFld.value.trim();
+    var email = emailFld.value.trim();
 
-if (checkoutForm) {
-  checkoutForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    var name = document.getElementById('name').value.trim();
-    var phone = document.getElementById('phone').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var comment = document.getElementById('comment').value.trim(); // Валидация формы
+    if (name === '') {
+      errors.push('Enter your name, please');
+      nameFld.classList.add('is-invalid');
+    } else if (name.length < 2) {
+      errors.push('Your name is too short');
+      nameFld.classList.add('is-invalid');
+    }
 
-    if (!name || !phone || !email || !comment) {
-      toast.warning('Будь ласка, заповніть всі поля форми!');
+    if (email === '') {
+      errors.push('Enter your email, please');
+      emailFld.classList.add('is-invalid');
+    } else if (!isValidEmail(email)) {
+      errors.push('Incorrect email format, please');
+      emailFld.classList.add('is-invalid');
+    }
+
+    if (errors.length) {
+      toast.error(errors.join('. '));
       return;
     }
 
-    if (name === '') {
-      toast.error('Будь ласка, введіть ім\'я');
-      nameFld.classList.add('is-invalid');
-    } else if (name.length < 2) {
-      toast.error('Ваше ім\'я занадто коротке');
-      nameFld.classList.add('is-invalid');
-    }
-
-    if (phone === '') {
-      toast.error('Будь ласка, введіть номер телефону');
-      phoneFld.classList.add('is-invalid');
-    } // Формируем сообщение
-
-
-    var message = "<b>\u0406\u043C'\u044F:</b> ".concat(name, "\n<b>\u0422\u0435\u043B\u0435\u0444\u043E\u043D:</b> ").concat(phone, "\n<b>\u0415\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u0430 \u043F\u043E\u0448\u0442\u0430:</b> ").concat(email, "\n<b>\u041A\u043E\u043C\u0435\u043D\u0442\u0430\u0440:</b> ").concat(comment);
-    var encodedMessage = encodeURIComponent(message); // Telegram 
-
     var CHAT_ID = '-1002326954626';
-    var BOT_TOKEN = '7789690626:AAGEoRLZY2WpWhU22cjfN7fbj7fS_nFCsYM'; // Перенести на сервер
+    var BOT_TOKEN = '7789690626:AAGEoRLZY2WpWhU22cjfN7fbj7fS_nFCsYM'; // Перенеси на сервер
 
-    var url = "https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=").concat(encodedMessage, "&parse_mode=HTML"); // Отправка данных
-
-    console.log('Відправляємо повідомлення:', message);
-    console.log('Формований URL:', url);
-    fetch(url).then(function (response) {
-      if (!response.ok) {
-        throw new Error('Помилка при відправці повідомлення в Telegram');
-      }
-
+    var url = "https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=").concat(encodedMessage, "&parse_mode=HTML");
+    console.log(url);
+    fetch(url, {
+      method: 'POST'
+    }).then(function (response) {
       return response.json();
-    }).then(function (data) {
-      console.log('Повідомлення відправлено:', data);
-      toast.success('Ваше повідомлення успішно відправлене!');
-      checkoutForm.reset();
-    })["catch"](function (error) {
-      console.error('Помилка при відправці повідомлення:', error);
-      toast.error('Відбулася помилка при відправленні повідомлення. Спробуйте, будь ласка, ще раз!');
+    }).then(function (resp) {
+      if (resp.ok) {
+        nameFld.value = '';
+        emailFld.value = '';
+        toast.success('Ваше повідомлення успішно відправлене.');
+      } else {
+        toast.error('Виникла помилка, спробуйте пізніше.');
+      }
+    })["catch"](function (err) {
+      console.error(err);
+      toast.error('Щось пішло не так.');
     });
   });
-}
+
+  function isValidEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  }
+}); // Пример использования
+// toast.success('Ваше замовлення успішно выдправлене!');
+// toast.error('Відбулася помилка привідправленні замовлення. Спробуйте, будь ласка, ще раз!');
+// toast.warning('Это предупреждение!');
+// toast.info('Это информационное сообщение.');

@@ -42,7 +42,7 @@ function initializeSlider(ulElement) {
     slideMargin: 20,
     pager: true,
     enableTouch: true,
-    verticalHeight: 700,
+    vertical: false,
     responsive: [{
       breakpoint: 1200,
       settings: {
