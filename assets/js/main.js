@@ -78,27 +78,31 @@ function initializeSlider(ulElement) {
 }
 
 function addCartEventListeners(ulElement) {
-  const addToCartButtons = ulElement.find('.add-to-cart');
-  addToCartButtons.each(function () {
-    $(this).on('click', function (event) {
+  const addToCartButtons = ulElement.querySelectorAll('.add-to-cart');
+  
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
       event.preventDefault();
+
       const item = {
-        id: Number($(this).attr('data-id')),
-        tipe: $(this).attr('data-name'),
-        Price: Number($(this).attr('data-price')),
+        id: Number(this.getAttribute('data-id')),
+        tipe: this.getAttribute('data-name'),
+        Price: Number(this.getAttribute('data-price')),
         quantity: 1,
-        material: $(this).data('material'),
-        color: $(this).data('color'),
-        size: $(this).data('size'),
-        photo: $(this).data('photo'),
-        Mark: $(this).data('mark')
+        material: this.getAttribute('data-material'),
+        color: this.getAttribute('data-color'),
+        size: this.getAttribute('data-size'),
+        photo: this.getAttribute('data-photo'),
+        Mark: this.getAttribute('data-mark')
       };
+
       shoppingCart.addItemToCart(item);
       showCartModal();
       console.log("Add to cart button clicked!");
     });
   });
 }
+
 
 
 
