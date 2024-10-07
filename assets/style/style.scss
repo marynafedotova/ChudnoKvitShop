@@ -41,6 +41,7 @@ $primary-color: #2b5a52;
 $secondary-color: #B86754ff;
 $background-color: rgba(40, 92, 80, 0.9);
 $text-color: #fff;
+$red-color: #E36843;
 
 *,
 *::before,
@@ -135,7 +136,7 @@ header {
           transition: all 0.3s ease;
 
           &:hover a {
-            color: $secondary-color;
+            color: $red-color;
             text-decoration: underline;
           }
           #cart-button{
@@ -352,19 +353,20 @@ main {
       margin-bottom: 100px;
       margin-top: 100px;
       text-align: center;
-    }
-
-    .compani-info h2 {
-      color: rgb(191, 91, 55);
-    }
-
-    .compani-info p {
-      color: rgb(245, 238, 238);
+      h1{
+        padding: 50px;
+        text-transform: uppercase;
+        color: $red-color;
+        font-size: 2rem;
+      }
+      > p {
       margin-left: 50px;
       margin-right: 50px;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
     }
   }
-
+  }
 }
 
 .logo-wrapper {
@@ -462,6 +464,10 @@ main {
                   .details {
                     padding-bottom: 10px;
                     color: $dark-blue;
+                    display: flex;
+                    .details-title{
+                      color: $gray-color;
+                    }
                   }
                 }
 
@@ -486,10 +492,6 @@ main {
           }
         }
     }
-
-    .lSAction a {
-      background-image: url(../images/controls.png);
-    }
   }
 }
 .lSSlideOuter .lSPager.lSpg{
@@ -502,6 +504,28 @@ main {
 .lSSlideOuter .lSPager.lSpg > li.active a {
   background-color: $secondary-color;
 }
+#nextHtml, #prevHtml {
+  width: 40px;
+  height: 74px;
+  cursor: pointer;
+  position: absolute;
+
+}
+#nextHtml{
+  content: '>';
+  top: 1100px;
+  right: 170px;
+}
+#prevHtml{
+  content: '<';
+  top: 1100px;
+  left: 170px;
+
+}
+
+
+
+
 
 // Modal
 #orderModal{
@@ -662,7 +686,7 @@ footer {
   color: $text-color;
   padding: 20px;
   background-color: $primary-color;
-
+border-top: 1px solid $gray-color;
   .container-footer {
     width: min(90%, 1170px);
     margin: 0 auto;
@@ -681,12 +705,16 @@ footer {
 
     .contact-info h3,
     .social-media h3 {
-      font-size: 18px;
+      font-size: 1.3rem;
+      padding-bottom: 10px;
+      text-decoration: underline;
     }
 
     .contact-info p a {
-      color: $secondary-color;
-
+      color: $red-color;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding-bottom: 5px;
       &:hover {
         color: $gray-color;
         text-decoration: underline;
@@ -709,8 +737,8 @@ footer {
     }
 
     .social-media a {
-      color: $text-color;
-      font-size: 24px;
+      color: $red-color;
+      font-size: 2rem;
       transition: color 0.3s ease;
 
       img {
@@ -719,8 +747,9 @@ footer {
       }
 
       &:hover {
-        color: $secondary-color;
-
+        color: $text-color;
+        transform: scale(1.2);
+        text-decoration: underline;
         img {
           transform: scale(1.2);
         }
@@ -736,10 +765,7 @@ footer {
   }
 }
 
-.instagram-text {
-  font-size: 20px;
-  color: #dfebe9;
-}
+
 //shipping
 #shipping{
   padding-top: 150px;

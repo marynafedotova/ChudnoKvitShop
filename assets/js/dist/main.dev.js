@@ -23,7 +23,7 @@ function createSlider(elementId, jsonData) {
   var sliderContainer = $("#" + elementId);
   var ulElement = $("<ul></ul>");
   var slides = jsonData.map(function (item) {
-    return "\n    <li>\n      <div class=\"slide\">\n        <div class=\"slide-top\">\n          <img class=\"lazy\" src=\"".concat(item.photo, "\" alt=\"").concat(item.tipe, "\">\n        </div>\n        <div class=\"slide-middle\">\n          <div class=\"title\">").concat(item.tipe, "</div>\n          <div class=\"price\">").concat(item.Price, " \u0433\u0440\u043D</div>\n        </div>\n        <div class=\"slide-bottom\">\n          <div class=\"details\">\u041C\u0430\u0442\u0435\u0440\u0456\u0430\u043B: ").concat(item.material, "</div>\n          <div class=\"details\">\u041A\u043E\u043B\u0456\u0440: ").concat(item.color, "</div>\n          <div class=\"details\">\u0420\u043E\u0437\u043C\u0456\u0440: ").concat(item.size, " \u0441\u043C</div>\n        </div>\n        <button class=\"add-to-cart\"\n         data-id=\"").concat(item.id, "\" data-name=\"").concat(item.tipe, "\" \n         data-price=\"").concat(item.Price, "\" data-material=\"").concat(item.material, "\" \n         data-color=\"").concat(item.color, "\" data-size=\"").concat(item.size, "\" \n         data-photo=\"").concat(item.photo, "\" data-mark=\"").concat(item.Mark, "\">\u0414\u043E\u0434\u0430\u0442\u0438 \u0434\u043E \u043A\u043E\u0448\u0438\u043A\u0430</button>\n\n      </div>\n    </li>\n  ");
+    return "\n    <li>\n      <div class=\"slide\">\n        <div class=\"slide-top\">\n          <img class=\"lazy\" src=\"".concat(item.photo, "\" alt=\"").concat(item.tipe, "\">\n        </div>\n        <div class=\"slide-middle\">\n          <div class=\"title\">").concat(item.tipe, "</div>\n          <div class=\"price\">").concat(item.Price, " \u0433\u0440\u043D</div>\n        </div>\n        <div class=\"slide-bottom\">\n          <div class=\"details\"><div class=\"details-title\">\u041C\u0430\u0442\u0435\u0440\u0456\u0430\u043B:</div> ").concat(item.material, "</div>\n          <div class=\"details\"><div class=\"details-title\">\u041A\u043E\u043B\u0456\u0440:</div> ").concat(item.color, "</div>\n          <div class=\"details\"><div class=\"details-title\">\u0420\u043E\u0437\u043C\u0456\u0440:</div> ").concat(item.size, " \u0441\u043C</div>\n        </div>\n        <button class=\"add-to-cart\"\n         data-id=\"").concat(item.id, "\" data-name=\"").concat(item.tipe, "\" \n         data-price=\"").concat(item.Price, "\" data-material=\"").concat(item.material, "\" \n         data-color=\"").concat(item.color, "\" data-size=\"").concat(item.size, "\" \n         data-photo=\"").concat(item.photo, "\" data-mark=\"").concat(item.Mark, "\">\u0414\u043E\u0434\u0430\u0442\u0438 \u0434\u043E \u043A\u043E\u0448\u0438\u043A\u0430</button>\n\n      </div>\n    </li>\n  ");
   });
   ulElement.html(slides.join(""));
   sliderContainer.append(ulElement);
@@ -34,15 +34,17 @@ function createSlider(elementId, jsonData) {
 function initializeSlider(ulElement) {
   ulElement.lightSlider({
     item: 3,
-    controls: true,
     loop: true,
     speed: 400,
     auto: true,
     slideMove: 1,
     slideMargin: 20,
+    controls: false,
     pager: true,
     enableTouch: true,
     verticalHeight: 700,
+    prevArrow: '',
+    nextArrow: '',
     responsive: [{
       breakpoint: 1200,
       settings: {
@@ -81,3 +83,11 @@ function addCartEventListeners(ulElement) {
     });
   });
 }
+
+window.goToPrevSlide = function () {
+  lightSlider.goToPrevSlide();
+};
+
+window.goToNextSlide = function () {
+  lightSlider.goToNextSlide();
+};

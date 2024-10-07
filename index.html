@@ -24,6 +24,24 @@
   <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
   <link rel="manifest" href="assets/images/site.webmanifest">
   <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+  <!-- HTML Meta Tags -->
+<title>Chudnokvit</title>
+<meta name="description" content="">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://marynafedotova.github.io/ChudnoKvitShop/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chudnokvit">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://ogcdn.net/6064b869-74ed-4eb9-b76c-0b701ffe7e6b/v4/marynafedotova.github.io/Chudnokvit/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fimages%2F810e8f30-e7ce-4d87-a810-fd5be5545728.png%3Ftoken%3DSiRvDCde4M5kqz8X3ZS9pHFcwkYmpieKwQSSlkEUnFo%26height%3D512%26width%3D512%26expires%3D33264312627/og.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="marynafedotova.github.io">
+<meta property="twitter:url" content="https://marynafedotova.github.io/ChudnoKvitShop/">
+<meta name="twitter:title" content="Chudnokvit">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://ogcdn.net/6064b869-74ed-4eb9-b76c-0b701ffe7e6b/v4/marynafedotova.github.io/Chudnokvit/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fimages%2F810e8f30-e7ce-4d87-a810-fd5be5545728.png%3Ftoken%3DSiRvDCde4M5kqz8X3ZS9pHFcwkYmpieKwQSSlkEUnFo%26height%3D512%26width%3D512%26expires%3D33264312627/og.png">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
@@ -63,15 +81,14 @@
             <ul>
               <li><a href="index.html">ГОЛОВНА</a></li>
               <li><a href="assets/pages/catalog.html">КАТАЛОГ</a>
-                <ul class="submenu">
-                  <li><a href="assets/pages/catalog.html#bracelets">БРАСЛЕТИ</a></li>
-                  <li><a href="assets/pages/catalog.html#pendants">ПІДВІСКИ</a></li>
-                  <li><a href="assets/pages/catalog.html#earrings">СЕРЕЖКИ</a></li>
-                  <li><a href="assets/pages/catalog.html#sets">КОМПЛЕКТИ</a></li>
-                  <li><a href="assets/pages/catalog.html#gemstone-jewelry">ПРИКРАСИ З НАТУРАЛЬНОГО КАМІННЯ</a></li>
-                  <li><a href="assets/pages/catalog.html#beaded-jewelry">ПРИКРАСИ З БІСЕРУ</a></li>
-                </ul>
-              </li>
+                  <ul class="submenu">
+                    <li><a href="assets/pages/catalog.html#bracelets" target="_parent">БРАСЛЕТИ</a></li>
+                    <li><a href="assets/pages/catalog.html#gerdan" target="_parent">ГЕРДАНИ</a></li>
+                    <li><a href="assets/pages/catalog.html#necklace" target="_parent">НАМИСТА</a></li>
+                    <li><a href="assets/pages/catalog.html#choker" target="_parent">ЧОКЕРИ</a></li>
+                    <li><a href="assets/pages/catalog.html#earrings" target="_parent">СЕРЕЖКИ</a></li>
+                  </ul>
+                </li>
               <li><a href="assets/pages/contacts.html">КОНТАКТИ</a></li>
               <li><a href="assets/pages/shipping.html">ДОСТАВКА І ОПЛАТА</a></li>
               <li><a href="assets/pages/reviews.html">ВІДГУКИ</a></li>
@@ -96,13 +113,13 @@
         <div class="container">
           <div><img src="assets/images/logo.png" alt="logo"></div>
           <div class="compani-info">
-            <h2><b>Про нас</b></h2>
+            <h1>Про нас</h1>
             <p>
-              Вітаємо на нашому сайті! Ми - компанія, яка займається виготовленням унікальних прикрас з натурального
-              каміння та бісеру. У нас ви знайдете великий вибір браслетів, намист, сережок та комплектів. Всі наші
-              вироби виготовляються з великою любов'ю та увагою до деталей. Ми прагнемо надати вам якісні та стильні
-              прикраси для різних подій та заходів. Доступні ціни та широкий асортимент 💫 Наявність в закріплених 🌿
-              Потіш своє серденько ❤
+Вітаємо Вас на нашому сайті! 
+              Ми займаємося виготовленням унікальних прикрас з поєднанням найрізноманітніших матеріалів.
+              Серед нашого асортименту Ви знайдете браслети, намиста, сережки та чокери. 
+              Всі наші вироби виготовляються з любов'ю та увагою до деталей.
+              Знайдіть прикрасу до душі, потіште ваше серденько ❤️
             </p>
           </div>
         </div>
@@ -113,6 +130,10 @@
         <div class="container">
           <ul id="sliderNewGoods">
           </ul>
+        </div>
+        <div id="prevHtml" onclick="goToPrevSlide()">
+        </div>
+        <div id="nextHtml" class="lSNext" onclick="goToNextSlide()">
         </div>
       </section>
       <!-- Модальне вікно у корзині-->
@@ -190,13 +211,7 @@
         </div>
 
       </div>
-
-
-
     </main>
-
-
-
     <footer>
       <div class="container-footer">
         <div class="contact-info">
