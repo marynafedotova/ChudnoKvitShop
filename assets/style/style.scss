@@ -593,7 +593,7 @@ main {
     #bracelets, #gerdan, #necklace, #choker, #earrings{
       border-bottom: 2px solid $gray-color;
       h2{
-        color: $secondary-color;
+        color: $red-color;
         margin: 80px auto;
         text-align: center;
         font-size: 1.9rem;
@@ -647,21 +647,24 @@ main {
               .details {
                 color: $dark-blue;
                 padding-bottom: 10px;
+                display: flex;
+                .details-title{
+                  color: $text-color;
+                }
               }
             }
       
             .add-to-cart {
               padding: 10px;
-              background-color: #34717e;
-              color: #fff;
-              border: none;
+              background-color: #1f222f;
+              color: $text-color;
               border-radius: 5px;
               cursor: pointer;
               margin-left: auto;
               margin-right: auto;
-      
+              text-transform: uppercase;
               &:hover {
-                background-color: #1f222f;
+                background-color: $primary-color;
               }
             }
           }

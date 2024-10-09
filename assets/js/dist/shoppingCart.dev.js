@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     openCartButton.addEventListener('click', function () {
       if (shoppingCart.cart.length === 0) {
         toast.warning('Кошик порожній!');
+        console.log('Кошик порожній!');
       } else {
         showCartModal();
         shoppingCart.updateCartDisplay();
@@ -188,6 +189,14 @@ function showCartModal() {
 
   if (cartModal) {
     cartModal.style.display = 'block';
+  }
+
+  if (shoppingCart.cart.length === 0) {
+    toast.warning('Кошик порожній!');
+    hideCartModal();
+  } else {
+    showCartModal();
+    shoppingCart.updateCartDisplay();
   }
 }
 
