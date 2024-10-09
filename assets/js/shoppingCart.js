@@ -72,8 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const openCartButton = document.getElementById('openCartBtn');
   if (openCartButton) {
     openCartButton.addEventListener('click', function() {
-      showCartModal();
-      shoppingCart.updateCartDisplay();
+      if (shoppingCart.cart.length === 0) {
+        toast.warning('Кошик порожній!');
+      } else {
+        showCartModal();
+        shoppingCart.updateCartDisplay();
+      }
     });
   }
 
