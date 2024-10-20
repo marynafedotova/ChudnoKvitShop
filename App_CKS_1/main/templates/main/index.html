@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -9,21 +11,21 @@
   <meta property="og:locale" content="en">
   <title>Chudnokvit</title>
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/style/lightslider.css">
-  <link rel="stylesheet" href="assets/style/lightgallery-bundle.min.css">
-  <link rel="stylesheet" href="assets/style/lightgallery.css">
+  <link rel="stylesheet" href="{% static "assets/style/lightslider.css" %}">
+  <link rel="stylesheet" href="{% static "assets/style/lightgallery-bundle.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/style/lightgallery.css" %}">
 
-  <link rel="stylesheet" href="assets/style/animate.min.css">
-  <link rel="stylesheet" href="assets/style/style.min.css">
+  <link rel="stylesheet" href="{% static "assets/style/animate.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/style/style.min.css" %}">
   <!-- Icons -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="150x150" href="assets/images/mstile-150x150.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
-  <link rel="manifest" href="assets/images/site.webmanifest">
-  <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="{% static "assets/images/favicon.ico" %}" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "assets/images/apple-touch-icon.png" %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static "assets/images/favicon-16x16.png" %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static "assets/images/favicon-32x32.png" %}">
+  <link rel="icon" type="image/png" sizes="150x150" href="{% static "assets/images/mstile-150x150.png" %}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{% static "assets/images/android-chrome-512x512.png" %}">
+  <link rel="manifest" href="{% static "assets/images/site.webmanifest" %}">
+  <link rel="mask-icon" href="{% static "assets/images/safari-pinned-tab.svg" color="#5bbad5" %}">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
@@ -32,24 +34,24 @@
   <div class="page-overlay"></div>
   <div class="menu-panel">
     <div class="panel-top">
-      <div class="logo"><a href="/index.html"><img src="assets/images/logo.png" alt="logo"></a></div>
+      <div class="logo"><a href="{% static "/index.html" %}"><img src="{% static "assets/images/logo.png" %}" alt="logo"></a></div>
       <div class="hamburger-wrap">
         <button id="hamb-btn-mobile" class="hamburger hamburger--squeeze is-active" type="button">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
-          </span>
+          </span>" 
         </button>
       </div>
     </div>
     <nav>
       <ul class="mobile-menu">
-        <li><a href="/index.html">ГОЛОВНА</a></li>
-        <li><a href="assets/pages/catalog.html">КАТАЛОГ</a></li>
-        <li><a href="assets/pages/сontacts.html">КОНТАКТИ</a></li>
-        <li><a href="assets/pages/shipping.html">ДОСТАВКА І ОПЛАТА</a></li>
-        <li><a href="assets/pages/reviews.html">ВІДГУКИ</a></li>
-        <li><a href="assets/pages/promotions.html">АКЦІЇ</a></li>
-        <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="assets/images/cart.svg" alt="cart"></button></li>
+        <li><a href="{% static "/index.html" %}">ГОЛОВНА</a></li>
+        <li><a href="{% static "assets/pages/catalog.html" %}">КАТАЛОГ</a></li>
+        <li><a href="{% static "assets/pages/сontacts.html" %}">КОНТАКТИ</a></li>
+        <li><a href="{% static "assets/pages/shipping.html" %}">ДОСТАВКА І ОПЛАТА</a></li>
+        <li><a href="{% static "assets/pages/reviews.html" %}">ВІДГУКИ</a></li>
+        <li><a href="{% static "assets/pages/promotions.html" %}">АКЦІЇ</a></li>
+        <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="{% static "assets/images/cart.svg" %}" alt="cart"></button></li>
       </ul>
     </nav>
   </div>
@@ -57,26 +59,26 @@
     <header>
       <div class="nav-container">
         <div class="container">
-          <div class="logo"><a href="/index.html"><img src="assets/images/logo.png" alt="logo"></a>
+          <div class="logo"><a href="{% static "/index.html" %}"><img src="{% static "assets/images/logo.png" %}" alt="logo"></a>
           </div>
           <nav>
             <ul>
-              <li><a href="index.html">ГОЛОВНА</a></li>
-              <li><a href="assets/pages/catalog.html">КАТАЛОГ</a>
+              <li><a href="{% static "index.html" %}">ГОЛОВНА</a></li>
+              <li><a href="{% static "assets/pages/catalog.html" %}">КАТАЛОГ</a>
                 <ul class="submenu">
-                  <li><a href="assets/pages/catalog.html#bracelets">БРАСЛЕТИ</a></li>
-                  <li><a href="assets/pages/catalog.html#pendants">ПІДВІСКИ</a></li>
-                  <li><a href="assets/pages/catalog.html#earrings">СЕРЕЖКИ</a></li>
-                  <li><a href="assets/pages/catalog.html#sets">КОМПЛЕКТИ</a></li>
-                  <li><a href="assets/pages/catalog.html#gemstone-jewelry">ПРИКРАСИ З НАТУРАЛЬНОГО КАМІННЯ</a></li>
-                  <li><a href="assets/pages/catalog.html#beaded-jewelry">ПРИКРАСИ З БІСЕРУ</a></li>
+                  <li><a href="{% static "assets/pages/catalog.html#bracelets" %}">БРАСЛЕТИ</a></li>
+                  <li><a href="{% static "assets/pages/catalog.html#pendants" %}">ПІДВІСКИ</a></li>
+                  <li><a href="{% static "assets/pages/catalog.html#earrings" %}">СЕРЕЖКИ</a></li>
+                  <li><a href="{% static "assets/pages/catalog.html#sets" %}">КОМПЛЕКТИ</a></li>
+                  <li><a href="{% static "assets/pages/catalog.html#gemstone-jewelry" %}">ПРИКРАСИ З НАТУРАЛЬНОГО КАМІННЯ</a></li>
+                  <li><a href="{% static "assets/pages/catalog.html#beaded-jewelry" %}">ПРИКРАСИ З БІСЕРУ</a></li>
                 </ul>
               </li>
-              <li><a href="assets/pages/contacts.html">КОНТАКТИ</a></li>
-              <li><a href="assets/pages/shipping.html">ДОСТАВКА І ОПЛАТА</a></li>
-              <li><a href="assets/pages/reviews.html">ВІДГУКИ</a></li>
-              <li><a href="assets/pages/promotions.html">АКЦІЇ</a></li>
-              <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="assets/images/cart.svg" alt="cart"></button></li>
+              <li><a href="{% static "assets/pages/contacts.html" %}">КОНТАКТИ</a></li>
+              <li><a href="{% static "assets/pages/shipping.html" %}">ДОСТАВКА І ОПЛАТА</a></li>
+              <li><a href="{% static "assets/pages/reviews.html" %}">ВІДГУКИ</a></li>
+              <li><a href="{% static "assets/pages/promotions.html" %}">АКЦІЇ</a></li>
+              <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="{% static "assets/images/cart.svg" %}" alt="cart"></button></li>
 
             </ul>
           </nav>
@@ -94,7 +96,7 @@
       <!-- hero-section -->
       <section class="hero-section">
         <div class="container">
-          <div><img src="assets/images/logo.png" alt="logo"></div>
+          <div><img src="{% static "assets/images/logo.png" %}" alt="logo"></div>
           <div class="compani-info">
             <h2><b>Про нас</b></h2>
             <p>
@@ -217,7 +219,7 @@
               <a class="instagram-text"
                 href="https://www.instagram.com/chudno_kvit_jewelryaccessories/?igshid=MzRlODBiNWFlZA%3D%3D"
                 target="_blank">
-                <img src="assets/images/free-icon-instagram-2097658.png" alt="Instagram">
+                <img src="{% static "assets/images/free-icon-instagram-2097658.png" %}" alt="Instagram">
                 Instagram
               </a>
             </li>
@@ -226,15 +228,21 @@
       </div>
       <div class="copyright">© 2023 Всі права захищені.</div>
     </footer>
-    <script src="assets/js/jquery/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plagins/lightslider.min.js"></script>
-    <script src="assets/js/plagins/lightgallery.umd.js"></script>
-    <script src="assets/js/plagins/lightgallery.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/lazyload.min.js"></script>
-    <script src="assets/js/toast.js"></script>
-    <script src="assets/js/shoppingCart.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{% static "assets/js/jquery/jquery-3.7.1.min.js" %}"></script>
+    <script src="{% static "assets/js/plagins/lightslider.min.js" %}"></script>
+    <script src="{% static "assets/js/plagins/lightgallery.umd.js" %}"></script>
+    <script src="{% static "assets/js/plagins/lightgallery.min.js" %}"></script>
+    <script src="{% static "assets/js/wow.min.js" %}"></script>
+    <script src="{% static "assets/js/lazyload.min.js" %}"></script>
+    <script src="{% static "assets/js/toast.js" %}"></script>
+    <script src="{% static "assets/js/shoppingCart.js" %}"></script>
+
+    <script>
+      var dataJsonUrl = "{% static 'assets/data/data.json' %}";
+   </script>
+  
+
+    <script src="{% static "assets/js/main.js" %}"></script>
   </div>
 </body>
 
