@@ -40,9 +40,9 @@ fetch('../data/data.json')
               <div class="price">${item.Price} грн</div>
             </div>
             <div class="slide-bottom">
-              <div class="details">Матеріал: ${item.material}</div>
-              <div class="details">Колір: ${item.color}</div>
-              <div class="details">Розмір: ${item.size} см</div>
+              <div class="details"><div class="details-title">Матеріал:</div>  ${item.material}</div>
+              <div class="details"><div class="details-title">Колір:</div>  ${item.color}</div>
+              <div class="details"><div class="details-title">Розмір:</div>  ${item.size} см</div>
             </div>
             <button class="add-to-cart" 
               data-id="${item.id}" 

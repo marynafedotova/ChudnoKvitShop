@@ -8,7 +8,7 @@ function toggleMobileMenu() {
 
 // Slider
 document.addEventListener('DOMContentLoaded', function () {
-  fetch(dataJsonUrl)
+  fetch('assets/data/data.json')
     .then(response => response.json())
     .then(data => {
       createSlider('sliderNewGoods', data);
@@ -31,9 +31,9 @@ function createSlider(elementId, jsonData) {
           <div class="price">${item.Price} грн</div>
         </div>
         <div class="slide-bottom">
-          <div class="details">Матеріал: ${item.material}</div>
-          <div class="details">Колір: ${item.color}</div>
-          <div class="details">Розмір: ${item.size} см</div>
+          <div class="details"><div class="details-title">Матеріал:</div> ${item.material}</div>
+          <div class="details"><div class="details-title">Колір:</div> ${item.color}</div>
+          <div class="details"><div class="details-title">Розмір:</div> ${item.size} см</div>
         </div>
         <button class="add-to-cart"
          data-id="${item.id}" data-name="${item.tipe}" 
@@ -55,15 +55,17 @@ function createSlider(elementId, jsonData) {
 function initializeSlider(ulElement) {
   ulElement.lightSlider({
     item: 3,
-    controls: true,
     loop: true,
     speed: 400,
     auto: true,
     slideMove: 1,
     slideMargin: 20,
+    controls: false,
     pager: true,
     enableTouch: true,
-    vertical: false,
+    verticalHeight:700,
+    prevArrow: '',
+    nextArrow: '',
     responsive: [
       {
         breakpoint: 1200,
@@ -99,6 +101,13 @@ function addCartEventListeners(ulElement) {
     });
   });
 }
+window.goToPrevSlide = function () {
+  lightSlider.goToPrevSlide();
+};
+
+window.goToNextSlide = function () {
+  lightSlider.goToNextSlide();
+};
 
 
 

@@ -75,8 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (openCartButton) {
     openCartButton.addEventListener('click', function () {
-      showCartModal();
-      shoppingCart.updateCartDisplay();
+      if (shoppingCart.cart.length === 0) {
+        toast.warning('Кошик порожній!');
+        console.log('Кошик порожній!');
+      } else {
+        showCartModal();
+        shoppingCart.updateCartDisplay();
+      }
     });
   } // Оформление заказа
 
@@ -184,6 +189,14 @@ function showCartModal() {
 
   if (cartModal) {
     cartModal.style.display = 'block';
+  }
+
+  if (shoppingCart.cart.length === 0) {
+    toast.warning('Кошик порожній!');
+    hideCartModal();
+  } else {
+    showCartModal();
+    shoppingCart.updateCartDisplay();
   }
 }
 

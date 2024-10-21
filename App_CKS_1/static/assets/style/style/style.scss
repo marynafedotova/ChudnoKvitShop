@@ -417,69 +417,6 @@ main {
 
   .container {
     margin: 0 auto;
-<<<<<<< HEAD
-    width: min(90%, 1170px);
-    position: relative;
-.lSSlideOuter {
- height: 100%;
-  width: 1170px;
-  position: relative;
-   .lSPager.lSpg > li a {
-    display: none;
-  }
-  .lSSlideWrapper.usingCss{
-    height: 500px;
-  }
-  li{
-    height:100%;
-    .slide{
-      background-color: $secondary-color;
-      padding: 10px;
-      height: 100%;
-      border: 1px solid $blue-gray;
-      border-radius: 5%;
-      .slide-top{
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-  
-        img{
-          width: 300px;
-          aspect-ratio: 1; 
-          margin-bottom: 10px;
-         }
-      }
-      .slide-middle{
-        display: flex;
-        justify-content: space-between;
-        .title, .price{
-          color: $gray-color;
-          margin-bottom: 30px;
-          font-weight: 700;
-          font-size: 1.3rem;
-        }
-      }
-      .slide-bottom{
-
-        .add-to-cart {
-          display: block;
-          margin-top: 10px;
-          padding: 10px 20px;
-          background-color: rgb(52, 113, 126);
-          color: $text-color;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          margin-left: auto;
-          margin-right: auto;
-          &:hover {
-            background-color: rgb(31, 34, 47);
-          }
-  
-        }
-      }
-      
-=======
 
     #sliderNewGoods {
       .lSSlideOuter {
@@ -554,7 +491,6 @@ main {
             }
           }
         }
->>>>>>> main
     }
   }
 }
