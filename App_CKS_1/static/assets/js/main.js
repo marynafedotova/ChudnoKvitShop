@@ -8,7 +8,7 @@ function toggleMobileMenu() {
 
 // Slider
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('assets/data/data.json')
+  fetch(dataJsonUrl)
     .then(response => response.json())
     .then(data => {
       createSlider('sliderNewGoods', data);

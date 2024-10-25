@@ -35,7 +35,7 @@
   <div class="page-overlay"></div>
   <div class="menu-panel">
     <div class="panel-top">
-      <div class="logo"><a href="{% static "/index.html" %}"><img src="{% static "assets/images/logo.png" %}" alt="logo"></a></div>
+      <div class="logo"><a href="{% url 'main:index' %}"><img src="{% static "assets/images/logo.png" %}" alt="logo"></a></div>
       <div class="hamburger-wrap">
         <button id="hamb-btn-mobile" class="hamburger hamburger--squeeze is-active" type="button">
           <span class="hamburger-box">
@@ -46,7 +46,7 @@
     </div>
     <nav>
       <ul class="mobile-menu">
-        <li><a href="{% static "/index.html" %}">ГОЛОВНА</a></li>
+        <li><a href="{% url 'main:index' %}">ГОЛОВНА</a></li>
         <li><a href="{% static "assets/pages/catalog.html" %}">КАТАЛОГ</a></li>
         <li><a href="{% static "assets/pages/сontacts.html" %}">КОНТАКТИ</a></li>
         <li><a href="{% static "assets/pages/shipping.html" %}">ДОСТАВКА І ОПЛАТА</a></li>
@@ -60,11 +60,11 @@
     <header>
       <div class="nav-container">
         <div class="container">
-          <div class="logo"><a href="{% static "/index.html" %}"><img src="{% static "assets/images/logo.png" %}" alt="logo"></a>
+          <div class="logo"><a href="{% url 'main:index' %}"><img src="{% static "assets/images/logo.png" %}" alt="logo"></a>
           </div>
           <nav>
             <ul>
-              <li><a href="{% static "index.html" %}">ГОЛОВНА</a></li>
+              <li><a href="{% url 'main:index' %}">ГОЛОВНА</a></li>
               <li><a href="{% static "assets/pages/catalog.html" %}">КАТАЛОГ</a>
                   <ul class="submenu">
                     <li><a href="{% static "assets/pages/catalog.html#bracelets" target="_parent" %}">БРАСЛЕТИ</a></li>
@@ -209,13 +209,8 @@
     <script src="{% static "assets/js/lazyload.min.js" %}"></script>
     <script src="{% static "assets/js/toast.js" %}"></script>
     <script src="{% static "assets/js/shoppingCart.js" %}"></script>
-
-    <script>
-      var dataJsonUrl = "{% static 'assets/data/data.json' %}";
-   </script>
-  
-
-    <script src="{% static "assets/js/main.js" %}"></script>
+    {% block js_fanc %}
+    {% endblock js_fanc %}
   </div>
 </body>
 
