@@ -1,4 +1,4 @@
-{% extends "main/base.html" %}
+{% extends "base.html" %}
 
 {% load static %}
   {% block head_1 %}
@@ -64,11 +64,3 @@
       </section>
     {% endblock hero-section %}
 
-    {% block js_fanc %}
-    <script>
-      var dataJsonUrl = "{% static 'assets/data/data.json' %}";
-   </script>
-  
-
-    <script src="{% static "assets/js/main.js" %}"></script>
-    {% endblock js_fanc %}
