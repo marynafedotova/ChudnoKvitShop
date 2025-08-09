@@ -109,6 +109,8 @@ window.goToNextSlide = function () {
   lightSlider.goToNextSlide();
 };
 
+  document.getElementById("year").textContent = new Date().getFullYear();
+
 
 
 
