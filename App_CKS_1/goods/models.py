@@ -37,6 +37,9 @@ class Product(models.Model):
     material = models.CharField(max_length=300, null=True, blank=True, verbose_name="Матеріал")
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Ціна')
     discount_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='Акційна ціна')
+    created = models.DateTimeField(auto_now_add=True, db_index=True, null=True, blank=True, verbose_name="Дата створення")
+    updated = models.DateTimeField(auto_now=True, db_index=True, null=True, blank=True, verbose_name="Дата оновлення")
+    
 
 
     class Meta:
@@ -108,7 +111,7 @@ class ProductImage(models.Model):
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name='images'
     )
-    photo = models.ImageField(upload_to=product_image_upload_path)
+    photo = models.ImageField(upload_to=product_image_upload_path, verbose_name="Зображення")
 
     def __str__(self):
         if self.product:
