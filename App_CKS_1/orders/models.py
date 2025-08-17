@@ -27,6 +27,16 @@ class Order(models.Model):
         verbose_name="Загальна сума"
     )
     shipping_details = models.TextField(verbose_name="Дані по відправці та оплаті")
+    status = models.CharField(
+        max_length=50,
+        choices=[
+            ('new', 'Нове'),
+            ('complete', 'Виконано'),
+        ],
+        default='new',
+        db_index=True,
+        verbose_name='Статус'
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата створення")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата оновлення")
     ttn = models.CharField(

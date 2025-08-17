@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load static %}
+  {% block head_1 %}
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>Доставка і оплата</title>
+    {% endblock head_1 %}
+
+    {% block hero-section %}
+    <main>
+      <section id="shipping">
+        <div class="container">
+          <h1>Доставка і оплата</h1>
+          <p>Доставка здійснюється по повній передплаті за замовлення за тарифами Нової пошти у відділеня чи поштомати.
+          </p>
+          <p class="advantages">Наши переваги:</p>
+          <ul class="advantages-list">
+            <li>Безкоштовна доставка при замовленні на суму понад $50</li>
+            <li>Термін доставки: 3-5 робочих днів</li>
+            <li>Способи доставки: поштова доставка</li>
+          </ul>
+          <h2>Оплата</h2>
+          <p>Оплата здійснюється після підтвердження мненджером наявності товарубезготівковим розрахунком</p>
+        </div>
+      </section>
+      {% endblock hero-section %}
+
+      

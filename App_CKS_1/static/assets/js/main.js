@@ -8,7 +8,7 @@ function toggleMobileMenu() {
 
 // Slider
 document.addEventListener('DOMContentLoaded', function () {
-  fetch(dataJsonUrl)
+  fetch('assets/data/data.json')
     .then(response => response.json())
     .then(data => {
       createSlider('sliderNewGoods', data);
@@ -63,6 +63,7 @@ function initializeSlider(ulElement) {
     controls: false,
     pager: true,
     enableTouch: true,
+    vertical: false,
     verticalHeight:700,
     prevArrow: '',
     nextArrow: '',
@@ -108,8 +109,6 @@ window.goToPrevSlide = function () {
 window.goToNextSlide = function () {
   lightSlider.goToNextSlide();
 };
-
-  document.getElementById("year").textContent = new Date().getFullYear();
 
 
 

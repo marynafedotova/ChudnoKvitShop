@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static %}
+  {% block head_1 %}
+  <link rel="mask-icon" href="../images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>Contacts</title>
+  {% endblock head_1 %}
+
+    {% block hero-section %}
+      <!-- Form-->
+      <section id="contact-form">
+        <div class="container">
+          <h1>Зв'язатися з нами</h1>
+          <form id="feedback_form">
+            <div class="form-container">
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" required placeholder="Ваше ім'я">
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" id="phone" required placeholder="Ваш номер телефону">
+              </div>
+            </div>
+            <div class="form-container">
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" required placeholder="Ваша електронна пошта">
+              </div>
+              <div class="form-group">
+                <textarea id="comment" class="form-control" cols="21" rows="4" placeholder="Ваш коментар"></textarea>
+              </div>
+          </div>
+            <button type="submit" class="btn-form">Відправити повідомлення</button>
+          </form>
+
+        </div>
+      </section>
+
+      <!-- Time works-->
+      <section class="working-hours">
+        <div class="container">
+          <h2 class="section-title">Графік роботи</h2>
+          <p>Понеділок-П'ятниця: 9:00 - 18:00</p>
+          <p>Субота-Неділя: Зачинено</p>
+        </div>
+      </section>
+
+
+      <!-- FAQ -->
+      <section class="faq">
+        <div class="container">
+          <h2 class="section-title">Часті питання</h2>
+          <ul>
+            <li>
+              <h3>Як можу зробити замовлення?</h3>
+              <p>Для замовлення перейдіть до сторінки каталогу, виберіть бажані товари та додайте їх до кошика. Після
+                цього перейдіть до сторінки кошика та оформіть замовлення.</p>
+            </li>
+            <li>
+              <h3>Які способи оплати ви приймаєте?</h3>
+              <p>Ми здійснюємо отправку за передплатою на карту.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  {% endblock hero-section %}
+    
