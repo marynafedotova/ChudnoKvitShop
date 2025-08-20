@@ -11,37 +11,43 @@
   {% block head_1 %}
   {% endblock head_1 %}
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{% static "assets/style/lightslider.css" %}">
-  <link rel="stylesheet" href="{% static "assets/style/lightgallery-bundle.min.css" %}">
-  <link rel="stylesheet" href="{% static "assets/style/lightgallery.css" %}">
-  <link rel="stylesheet" href="{% static "assets/style/animate.min.css" %}">
-  <link rel="stylesheet" href="{% static "assets/style/style.min.css" %}">
+  <link rel="stylesheet" href="{% static 'assets/style/lightslider.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/style/lightgallery-bundle.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/style/lightgallery.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/style/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/style/style.min.css' %}">
   <!-- Icons -->
   {% block shortcut_icon %}
   {% endblock shortcut_icon %}
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static "assets/images/apple-touch-icon.png" %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static "assets/images/favicon-16x16.png" %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static "assets/images/favicon-32x32.png" %}">
-  <link rel="icon" type="image/png" sizes="150x150" href="{% static "assets/images/mstile-150x150.png" %}">
-  <link rel="icon" type="image/png" sizes="512x512" href="{% static "assets/images/android-chrome-512x512.png" %}">
-  <link rel="manifest" href="{% static "assets/images/site.webmanifest" %}">
-  <link rel="mask-icon" href="{% static "assets/images/safari-pinned-tab.svg" %}" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon-16x16.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="150x150" href="{% static 'assets/images/mstile-150x150.png' %}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{% static 'assets/images/android-chrome-512x512.png' %}">
+  <link rel="manifest" href="{% static 'assets/images/site.webmanifest' %}">
+  <link rel="mask-icon" href="{% static 'assets/images/safari-pinned-tab.svg' %}" color="#5bbad5">
   <!-- HTML Meta Tags -->
   {% block meta_tags %}
   {% endblock meta_tags %}
 </head>
 
 <body>
+  <div class="loader"></div>
+  <div class="content" style="display: none;">
+    <h1>Контент загрузился!</h1>
+    <p>Лоадер должен исчезнуть через 1 секунду</p>
+</div>
   <div class="page-overlay"></div>
+  <div class="page-wrapper-all">
   <div class="menu-panel">
     <div class="panel-top">
-      <div class="logo"><a href="{% url 'main:index' %}"><img src="{% static "assets/images/logo.png" %}"
+      <div class="logo"><a href="{% url 'main:index' %}"><img src="{% static 'assets/images/logo.png' %}"
             alt="logo"></a></div>
       <div class="hamburger-wrap">
         <button id="hamb-btn-mobile" class="hamburger hamburger--squeeze is-active" type="button">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
-          </span>"
+          </span>
         </button>
       </div>
     </div>
@@ -53,8 +59,7 @@
         <li><a href="{% url 'main:shipping' %}">ДОСТАВКА І ОПЛАТА</a></li>
         <li><a href="{% url 'main:reviews' %}">ВІДГУКИ</a></li>
         <li><a href="{% url 'main:sales' %}">АКЦІЇ</a></li>
-        <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="{% static "
-              assets/images/cart.svg" %}" alt="cart"></button></li>
+        <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="{% static 'assets/images/cart.svg' %}" alt="cart"></button></li>
       </ul>
     </nav>
   </div>
@@ -62,7 +67,7 @@
     <header>
       <div class="nav-container">
         <div class="container">
-          <div class="logo"><a href="{% url 'main:index' %}"><img src="{% static "assets/images/logo.png" %}"
+          <div class="logo"><a href="{% url 'main:index' %}"><img src="{% static 'assets/images/logo.png' %}"
                 alt="logo"></a>
           </div>
           <nav>
@@ -85,7 +90,7 @@
               <li><a href="{% url 'main:shipping' %}">ДОСТАВКА І ОПЛАТА</a></li>
               <li><a href="{% url 'main:reviews' %}">ВІДГУКИ</a></li>
               <li><a href="{% url 'main:sales' %}">АКЦІЇ</a></li>
-              <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="{% static "assets/images/cart.svg" alt="cart" %}"></button></li>
+              <li><button id="cart-button" type="button" onclick="showCartModal()"><img src="{% static 'assets/images/cart.svg'%}"  alt="cart" ></button></li>
 
             </ul>
           </nav>
@@ -199,7 +204,7 @@
               <a class="instagram-text"
                 href="https://www.instagram.com/chudno_kvit_jewelryaccessories/?igshid=MzRlODBiNWFlZA%3D%3D"
                 target="_blank">
-                <img src="{% static " assets/images/free-icon-instagram-2097658.png" %}" alt="Instagram">
+                <img src="{% static 'assets/images/free-icon-instagram-2097658.png' %}" alt="Instagram">
                 Instagram
               </a>
             </li>
@@ -210,18 +215,26 @@
         © <span id="year"></span> Всі права захищені.
       </div>
     </footer>
-    <script src="{% static "assets/js/jquery/jquery-3.7.1.min.js" %}"></script>
-    <script src="{% static "assets/js/plagins/lightslider.min.js" %}"></script>
-    <script src="{% static "assets/js/plagins/lightgallery.umd.js" %}"></script>
-    <script src="{% static "assets/js/plagins/lightgallery.min.js" %}"></script>
-    <script src="{% static "assets/js/wow.min.js" %}"></script>
-    <script src="{% static "assets/js/lazyload.min.js" %}"></script>
-    <script src="{% static "assets/js/toast.js" %}"></script>
-    <script src="{% static "assets/js/shoppingCart.js" %}"></script>
     <script>
-      var dataJsonUrl = "{% static "assets/data/data.json" %}";
+        document.addEventListener('DOMContentLoaded', function() {          
+          window.addEventListener('load', function() {
+            setTimeout(function() {
+              document.querySelector('.loader').classList.add('hidden');
+              document.body.classList.add('loaded');
+              
+              console.log('Страница загружена, лоадер скрыт');
+            }, 1000);  
+          });
+        });
     </script>
-    <script src="{% static "assets/js/main.js" %}"></script>
+    <script src="{% static 'assets/js/jquery/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/plagins/lightslider.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/lazyload.min.js' %}"></script>
+    <script src="{% static 'assets/js/toast.js' %}"></script>
+    <script src="{% static 'assets/js/shoppingCart.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </div>
   </div>
 </body>
 

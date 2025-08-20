@@ -42,6 +42,7 @@ function initializeSlider(ulElement) {
     controls: false,
     pager: true,
     enableTouch: true,
+    vertical: false,
     verticalHeight: 700,
     prevArrow: '',
     nextArrow: '',

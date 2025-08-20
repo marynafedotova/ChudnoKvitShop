@@ -92,9 +92,87 @@
       </div>
     </header>
     <main>
-      <div id="product-slider">
-      </div>
-      
+       <div class="container">
+        <div class="product-page">
+            <div class="product-gallery">
+                <div class="slider-container">
+                    <div class="main-slider">
+                        <div class="main-slide active">
+                            <div class="no-image">
+                                <i class="fas fa-image fa-5x"></i>
+                                <p>Немає зображення</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-nav">
+                        <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="thumbnail-container">
+                    <div class="thumbnail active">
+                        <div class="no-image">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1 class="product-title">Браслет</h1>
+                <div class="product-sku">Артикул: 0001</div>
+                
+                <div class="product-price">
+                    <span class="current-price">120,00 грн</span>
+                    <!-- Если есть акционная цена:
+                    <span class="old-price">150,00 грн</span>
+                    <span class="sale-badge">-20%</span> 
+                    -->
+                </div>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Статус:</span>
+                        <span class="meta-value status-available">В наявності</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Розмір:</span>
+                        <span class="meta-value">3,20</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Матеріал:</span>
+                        <span class="meta-value">такий-то</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Категорія:</span>
+                        <span class="meta-value">Не вказано</span>
+                    </div>
+                </div>
+                
+                <div class="add-to-cart">
+                    <div class="quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="text" class="quantity-input" value="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="add-cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Додати до кошика
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h3 class="description-title">Опис товару</h3>
+                    <div class="description-content">
+                        бла-бла
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
       <!-- Модальне вікно у корзині-->
       <div class="container">
         <div id="modalWrapper" class="modal-wrapper">
