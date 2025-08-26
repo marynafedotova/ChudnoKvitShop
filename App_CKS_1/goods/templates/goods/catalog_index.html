@@ -8,33 +8,30 @@
   {% block hero-section %}
       <div class="container">
         <h1>Каталог товарів</h1>
-        <section id="bracelets">
-          <h2>Браслети</h2>
-          <div class="product-list">
-          </div>
-        </section>
-        <section id="gerdan">
-          <h2>Гердани</h2>
-          <div class="product-list">
-          </div>
-        </section>
-
-        <section id="necklace">
-          <h2>Намиста</h2>
-          <div class="product-list">
-         
-        </section>
-        <section id="choker">
-          <h2>Чокери</h2>
-          <div class="product-list">
-            
+        {% for category in categories %}
+          <section id="{{ category.slug }}">
+            <h2>{{ category.name }}</h2>
+            <div class="product-list">
+              {% for product in category.products.all %}
+                <div class="product-card">
+                  <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                  <h3>{{ product.name }}</h3>
+                  {% if product.discount_price %}
+                    <p><span style="text-decoration: line-through; color: #888;">
+                    {{ product.price }} грн
+                    </span>
+                    <span style="color: red; font-weight: bold;">
+                    {{ product.discount_price }} грн</span>
+                    </p>
+                  {% else %}
+                    <p>{{ product.price }} грн</p>
+                  {% endif %}
+                  <a href="{% url 'goods:product' product.slug %}">Детальніше</a>
+                </div>
+              {% empty %}
+              <p>Товарів ще немає</p>
+              {% endfor %}
             </div>
-        </section>
-        <section id="earrings">
-          <h2>Сережки</h2>
-          <div class="product-list">
-          </div>
-        </section>
-
-      </div>
+          </section>
+        {% endfor %}
     {% endblock hero-section %}

@@ -21,7 +21,7 @@ class Product(models.Model):
     name = models.CharField(max_length=150, unique=True, verbose_name='Назва')
     slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name='URL')
     article = models.CharField(max_length=10, unique=True, db_index=True, verbose_name='Артикул', blank=True)
-    category = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True, verbose_name='Категорія')
+    category = models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True, related_name="products", verbose_name='Категорія')
     availability = models.CharField(
         max_length=50,
         choices=[
